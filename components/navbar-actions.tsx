@@ -1,5 +1,6 @@
 'use client'
 
+import useCart from '@/hooks/use-cart'
 import { ShoppingBag } from 'lucide-react'
 import { useRouter } from 'next/navigation'
 import { useEffect, useState } from 'react'
@@ -13,6 +14,7 @@ const NavbarActions = () => {
 	}, [])
 
 	const router = useRouter()
+	const cart = useCart()
 
 	if (!isMounted) {
 		return null
@@ -26,7 +28,7 @@ const NavbarActions = () => {
 			>
 				<ShoppingBag size={20} color='white' />
 				<span className='ml-2 text-sm font-medium text-white'>
-					{/* {cart.items.length} */}0
+					{cart.items.length}
 				</span>
 			</Button>
 			hello
