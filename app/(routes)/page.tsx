@@ -1,5 +1,4 @@
 import getBillboard from '@/actions/get-billboard'
-import getCategories from '@/actions/get-categories'
 import getProducts from '@/actions/get-products'
 import Billboard from '@/components/billboard'
 import ProductList from '@/components/product-list'
@@ -10,9 +9,6 @@ export const revalidate = 0
 const HomePage = async () => {
 	const products = await getProducts({ isFeatured: true })
 	const billboard = await getBillboard('5e69ff65-66e6-46e5-8edc-56ffdd06e1c7')
-	const categories = await getCategories()
-
-	console.log(categories, 'categories')
 
 	return (
 		<Container>
